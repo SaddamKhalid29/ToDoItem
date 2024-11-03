@@ -12,4 +12,6 @@ public interface ToDoItemDao extends JpaRepository<ToDoItem, Integer> {
 	
 	List<ToDoItem> findByisCompleted(boolean isCompleted);
 
+	List<ToDoItem> findBytaskTitle(String taskTitle );
+
 }

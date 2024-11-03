@@ -29,4 +29,34 @@ public class ToDoItemService {
 		
 		return todoDao.findById(id);
 		}
+
+	public List<ToDoItem> getTaskByTitle(String title) {
+		
+		return todoDao.findBytaskTitle(title);
+	}
+
+	public ToDoItem addNewTask(ToDoItem toDoItem) {
+		// TODO Auto-generated method stub
+		
+		return todoDao.save(toDoItem);
+	}
+
+	public ToDoItem updateTaskById(Optional<ToDoItem> existingItem) {
+		// TODO Auto-generated method stub
+		
+		return todoDao.save(existingItem.get());
+		
+	}
+
+	public void updateTaskByTitle(ToDoItem toDo) {
+		// TODO Auto-generated method stub
+		
+		todoDao.save(toDo);
+		
+	}
+
+	public void deleteTaskById(ToDoItem toDoItem) {
+		// TODO Auto-generated method stub
+		todoDao.deleteById(toDoItem.getTaskId());
+	}
 	}
